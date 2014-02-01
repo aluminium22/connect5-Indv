@@ -29,9 +29,9 @@ public class Connect5 {
      */
     public static void main(String[] args) {
         Connect5 myGame = new Connect5();
+    myGame.getName();
     myGame.getAge();
     myGame.ageAllow();
-    myGame.getName();
     myGame.displayHelp();
     myGame.displayBoard();
             }
@@ -47,7 +47,7 @@ public class Connect5 {
     }
     public void getAge() {
         Scanner input = new Scanner(System.in);
-        System.out.println("are you younger than 4 years old?: ");
+        System.out.println("\n\r" + this.name + " are you younger than 4 years old?: ");
         this.age = input.next();
     }
     public void ageAllow() {
