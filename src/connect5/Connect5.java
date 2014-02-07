@@ -66,3 +66,30 @@ public class Connect5 {
         System.out.println(this.midrows);
     }
     }
+class HelpMenuView { 
+    public HelpMenuView(){
+    }
+    String menu = "    FOR HELP \nchoose options below.\n\rOption 1. instructions \n\rOption 2. stats";//guide to player
+    String stats ="stats";
+    String instructions = "  The first player to achieve this goal wins."
+            + "This is connect four. The object of the game is to get four in a row. \n " + "You can make your connections of 4 any direction, including vertical, horizontal, and angled.";
+    
+    public void displayHelpMenu(){
+        System.out.println(this.menu);
+    }
+    public void getHelp() 
+    throws java.io.IOException{
+        char i, option1 ='1', option2='2'; 
+       System.out.print("   Enter Option choice for help: ");
+       i = (char) System.in.read();
+    if(i == option1)
+           System.out.println(this.instructions);
+       if(i == option2){
+           System.out.println(this.stats);
+    }
+    else {System.out.println("invalid entry");}
+    }
+}
+class HelpMenuControl{
+
+}
