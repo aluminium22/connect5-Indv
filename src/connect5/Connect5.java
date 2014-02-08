@@ -65,31 +65,150 @@ public class Connect5 {
         System.out.println(this.midrows);
         System.out.println(this.midrows);
     }
-    }
-class HelpMenuView { 
-    public HelpMenuView(){
-    }
-    String menu = "    FOR HELP \nchoose options below.\n\rOption 1. instructions \n\rOption 2. stats";//guide to player
-    String stats ="stats";
-    String instructions = "  The first player to achieve this goal wins."
-            + "This is connect four. The object of the game is to get four in a row. \n " + "You can make your connections of 4 any direction, including vertical, horizontal, and angled.";
-    
-    public void displayHelpMenu(){
-        System.out.println(this.menu);
-    }
-    public void getHelp() 
-    throws java.io.IOException{
-        char i, option1 ='1', option2='2'; 
-       System.out.print("   Enter Option choice for help: ");
-       i = (char) System.in.read();
-    if(i == option1)
-           System.out.println(this.instructions);
-       if(i == option2){
-           System.out.println(this.stats);
-    }
-    else {System.out.println("invalid entry");}
-    }
-}
-class HelpMenuControl{
 
+    void displayError(String invalid_command_Please_enter_a_valid_comm) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    }
+class HelpMenuView  {
+        
+    private final static String[][] menuItems = {
+        {"1", "The board"}, 
+        {"2", "The connect4 game"},
+        {"3", "A location"},
+        {"4", "A marker"},
+        {"5", "A regular player"},        
+        {"6", "Quit Help"}        
+    };
+    
+    // Create instance of the HelpMenuControl (action) class
+    private HelpMenuControl helpMenuControl = new HelpMenuControl();
+    
+    // default constructor
+    public HelpMenuView() {
+        
+    } 
+    
+    // display the help menu and get the end users input selection
+    public void getInput() {       
+              
+        String command;
+        Scanner inFile = new Scanner(System.in);
+        
+        do {
+            
+            this.display(); // display the menu
+            
+            // get commaned entered
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
+            
+            switch (command) {
+                case "1":
+                    this.helpMenuControl.displayBoardHelp();
+                    break;
+                case "2":
+                    this.helpMenuControl.displayGameHelp();
+                    break;                  
+                case "3":
+                    this.helpMenuControl.displayLocationHelp();
+                    break;
+                case "4":
+                    this.helpMenuControl.displayMarkerHelp();
+                    break;
+                 case "5":
+                    this.helpMenuControl.displayRealPlayerHelp();
+                    break; 
+                case "6": 
+                    break;
+                default: 
+                    new Connect5().displayError("Invalid command. Please enter a valid command.");
+                    continue;
+            }
+        } while (!command.equals("8"));  
+        
+         return;
+    }
+
+        // displays the help menu
+    public final void display() {
+        System.out.println("\n\t===============================================================");
+        System.out.println("\tEnter the letter associated with one of the following commands:");
+
+        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
+            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        }
+        System.out.println("\t===============================================================\n");
+    }
+  
+}
+ class HelpMenuControl  {
+    
+    public HelpMenuControl() {
+        
+    } 
+
+    public void displayBoardHelp() {
+        System.out.println();
+        this.displayHelpBorder();             
+        System.out.println( 
+                "\tThe game board for Tic-Tac-Toe. It consist of a grid of "
+                + "\n\tlocations. Players place their marker on the different locations "
+                + "\n\ton the board in an effort to win the game. The default board is "
+                + "\n\t3 rows by 3 columns.");
+        displayHelpBorder();
+    }
+    
+    
+        
+    public void displayGameHelp() {
+        System.out.println();
+        displayHelpBorder();     
+        System.out.println( 
+                 "\tThe objective of the game is to be the first player to mark three "
+                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
+                + "\n\tturns placing their marker in one of the locations on the "
+                + "\n\tboard. The first player to get \"three-in-a-row\" is the winner."
+                ); 
+        displayHelpBorder();
+    }
+            
+    public void displayRealPlayerHelp() {
+        System.out.println();
+        displayHelpBorder();     
+        System.out.println( 
+                "\tA real player manually takes their turn by placing their mark "
+                + "\n\tin an unused location on the board."
+                ); 
+        displayHelpBorder();
+    }
+    
+                   
+    public void displayLocationHelp() {
+        System.out.println();
+        displayHelpBorder();     
+        System.out.println( 
+               "\tA location on the board where a player can place their marker"
+                ); 
+        displayHelpBorder();
+    }
+                 
+    public void displayMarkerHelp() {
+        System.out.println();
+        displayHelpBorder();     
+        System.out.println( 
+               "\tA symbol that \"marks\" the locations in the board that are occupied "
+                + "by the player. "
+                + "\n\tThe default markers are \"r\" and \"b\"."
+                ); 
+        displayHelpBorder();
+    }
+    
+    
+    public void displayHelpBorder() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    }
+    
+  
 }
