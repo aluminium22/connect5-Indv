@@ -71,151 +71,80 @@ public class Connect5 {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     }
-class HelpMenuView  {
-        
-    private final static String[][] menuItems = {
-        {"1", "The board"}, 
-        {"2", "The connect4 game"},
-        {"3", "A location"},
-        {"4", "A marker"},
-        {"5", "A regular player"},        
-        {"6", "Quit Help"}        
-    };
-    
-    // Create instance of the HelpMenuControl (action) class
-    private HelpMenuControl helpMenuControl = new HelpMenuControl();
-    
-    // default constructor
-    public HelpMenuView() {
-        
-    } 
-    
-    // display the help menu and get the end users input selection
-    public void getInput() {       
-              
-        String command;
-        Scanner inFile = new Scanner(System.in);
-        
-        do {
-            
-            this.display(); // display the menu
-            
-            // get commaned entered
-            command = inFile.nextLine();
-            command = command.trim().toUpperCase();
-            
-            switch (command) {
-                case "1":
-                    this.helpMenuControl.displayBoardHelp();
-                    break;
-                case "2":
-                    this.helpMenuControl.displayGameHelp();
-                    break;                  
-                case "3":
-                    this.helpMenuControl.displayLocationHelp();
-                    break;
-                case "4":
-                    this.helpMenuControl.displayMarkerHelp();
-                    break;
-                 case "5":
-                    this.helpMenuControl.displayRealPlayerHelp();
-                    break; 
-                case "6": 
-                    break;
-                default: 
-                    new Connect5().displayError("Invalid command. Please enter a valid command.");
-                    continue;
-            }
-        } while (!command.equals("8"));  
-        
-         return;
-    }
 
-        // displays the help menu
-    public final void display() {
-        System.out.println("\n\t===============================================================");
-        System.out.println("\tEnter the letter associated with one of the following commands:");
-
-        for (int i = 0; i < HelpMenuView.menuItems.length; i++) {
-            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
-        }
-        System.out.println("\t===============================================================\n");
-    }
-  
-}
- class HelpMenuControl  {
-    
-    public HelpMenuControl() {
-        
-    } 
-
-    public void displayBoardHelp() {
-        System.out.println();
-        this.displayHelpBorder();             
-        System.out.println( 
-                "\tThe game board for connect4. It consist of a grid of "
-                + "\n\tlocations. Players place their marker on the different locations "
-                + "\n\ton the board in an effort to win the game. The default board is "
-                + "\n\t6 rows by 7 columns.");
-        displayHelpBorder();
-    }
-    
-    
-        
-    public void displayGameHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-                 "\tThe objective of the game is to be the first player to mark four "
-                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
-                + "\n\tturns placing their marker in one of the locations on the "
-                + "\n\tboard. The first player to get \"four-in-a-row\" is the winner."
-                ); 
-        displayHelpBorder();
-    }
-            
-    public void displayRealPlayerHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-                "\tA real player manually takes their turn by placing their mark "
-                + "\n\tin an unused location on the board."
-                ); 
-        displayHelpBorder();
-    }
-    
-                   
-    public void displayLocationHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-               "\tA location on the board where a player can place their marker"
-                ); 
-        displayHelpBorder();
-    }
-                 
-    public void displayMarkerHelp() {
-        System.out.println();
-        displayHelpBorder();     
-        System.out.println( 
-               "\tA symbol that \"marks\" the locations in the board that are occupied "
-                + "by the player. "
-                + "\n\tThe default markers are \"r\" and \"b\"."
-                ); 
-        displayHelpBorder();
-    }
-    
-    
-    public void displayHelpBorder() {       
-        System.out.println(
-        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-    }
-
-    private static class Game {
-
-        public Game() {
-        }
-    }
+// class HelpMenuControl  {
+//    
+//    public HelpMenuControl() {
+//        
+//    } 
+//
+//    public void displayBoardHelp() {
+//        System.out.println();
+//        this.displayHelpBorder();             
+//        System.out.println( 
+//                "\tThe game board for connect4. It consist of a grid of "
+//                + "\n\tlocations. Players place their marker on the different locations "
+//                + "\n\ton the board in an effort to win the game. The default board is "
+//                + "\n\t6 rows by 7 columns.");
+//        displayHelpBorder();
+//    }
+//    
+//    
+//        
+//    public void displayGameHelp() {
+//        System.out.println();
+//        displayHelpBorder();     
+//        System.out.println( 
+//                 "\tThe objective of the game is to be the first player to mark four "
+//                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
+//                + "\n\tturns placing their marker in one of the locations on the "
+//                + "\n\tboard. The first player to get \"four-in-a-row\" is the winner."
+//                ); 
+//        displayHelpBorder();
+//    }
+//            
+//    public void displayRealPlayerHelp() {
+//        System.out.println();
+//        displayHelpBorder();     
+//        System.out.println( 
+//                "\tA real player manually takes their turn by placing their mark "
+//                + "\n\tin an unused location on the board."
+//                ); 
+//        displayHelpBorder();
+//    }
+//    
+//                   
+//    public void displayLocationHelp() {
+//        System.out.println();
+//        displayHelpBorder();     
+//        System.out.println( 
+//               "\tA location on the board where a player can place their marker"
+//                ); 
+//        displayHelpBorder();
+//    }
+//                 
+//    public void displayMarkerHelp() {
+//        System.out.println();
+//        displayHelpBorder();     
+//        System.out.println( 
+//               "\tA symbol that \"marks\" the locations in the board that are occupied "
+//                + "by the player. "
+//                + "\n\tThe default markers are \"r\" and \"b\"."
+//                ); 
+//        displayHelpBorder();
+//    }
+//    
+//    
+//    public void displayHelpBorder() {       
+//        System.out.println(
+//        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+//    }
+//
+//    private static class Game {
+//
+//        public Game() {
+//        }
+//    }
     
   
 public class GetLocationView {
