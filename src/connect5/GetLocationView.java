@@ -12,11 +12,11 @@ import java.util.Scanner;
  * @author Aluminium
  */
 public class GetLocationView {
-    private Game game;
+    //private Game game;
     
-    public GetLocationView(Game game) {
-        this.game = game;
-    }
+//    public GetLocationView(Game game) {
+//       this.game = game;
+//    }
     
     
     /*
@@ -36,8 +36,8 @@ public class GetLocationView {
         // prompt the use to enter the locaton to placeread the row and column coordinates
         while (!valid) {
             // prompt for the row and column numbers
-            System.out.println("\n\n\t" + this.game+ " it is your turn."
-                + " Enter a row and column number (For example: 1 6)");
+//            System.out.println("\n\n\t" + this.game+ " it is your turn."
+//                + " Enter a row and column number (For example: 1 6)");
             
             // get the value entered by the user 
             String strRowColumn = inFile.nextLine(); 

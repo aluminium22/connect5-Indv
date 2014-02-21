@@ -50,10 +50,6 @@ public class Board {
     public void occupyLocation(Player player, int row, int column) {
         Location location = this.boardLocations[row][column];
         
-        if ( location.player != null) { // location already occupied
-            new TicTacToeError().displayError("This location is already occupied. "
-                    + "Try a different location.");
-        }
         
         location.player = player;
     }
