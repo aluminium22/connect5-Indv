@@ -293,7 +293,7 @@ public class GetLocationView {
             int row = Integer.parseInt(coordinates[0]);
             int column = Integer.parseInt(coordinates[1]);
             
-            Board board = this.game.board; // get the game board
+            Board board = new Board(); // get the game board
             
             // Check for invalid row and column entered
             if (row < 1   ||  row > board.rowCount ||
