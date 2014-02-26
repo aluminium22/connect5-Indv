@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class MinmMaxView {
     private MinMax minMax;
-    String g1,g2,g3,g4,g5;
+    int g1,g2,g3,g4,g5;
     private final static String [][] items = {
         {"Enter wins based on last 5 games to get average"},
         {"1","one win"},
@@ -24,29 +24,29 @@ public class MinmMaxView {
     }
 
 public void getGameOne() {
-Scanner input =new Scanner(System.in);
+Scanner scan = new Scanner(System.in); 
 System.out.println("enter game 1 win or loss");
-this.g1=input.next();
+this.g1=scan.nextInt();
 }
 public void getGameTwo() {
-Scanner input =new Scanner(System.in);
+Scanner scan = new Scanner(System.in);
 System.out.println("enter game 2 win or loss");
-this.g2=input.next();
+this.g2=scan.nextInt();
 }
 public void getGameThree() {
-Scanner input =new Scanner(System.in);
+Scanner scan = new Scanner(System.in);
 System.out.println("enter game 3 win or loss");
-this.g3=input.next();
+this.g3=scan.nextInt();
 }
 public void getGameFour() {
-Scanner input =new Scanner(System.in);
+Scanner scan = new Scanner(System.in);
 System.out.println("enter game 4 win or loss");
-this.g4=input.next();
+this.g4=scan.nextInt();
 }
 public void getGameFive() {
-Scanner input =new Scanner(System.in);
+Scanner scan = new Scanner(System.in);
 System.out.println("enter game 5 win or loss");
-this.g5=input.next();
+this.g5=scan.nextInt();
 }
 public void displayGamesWinLose(){
         System.out.println("\n"+"Games1 through 5"+ ","+this.g1+","+ this.g2+"," +this.g3+"," + this.g4+"," + this.g5);
